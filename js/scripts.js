@@ -32,3 +32,20 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+var certIndex = 0;
+var certList = document.getElementById("certification-list");
+var certItems = certList.getElementsByTagName("li");
+
+function showCerts() {
+  for (var i = 0; i < certItems.length; i++) {
+    certItems[i].style.display = "none";
+  }
+  certIndex++;
+  if (certIndex > certItems.length) { certIndex = 1; }
+  certItems[certIndex - 1].style.display = "block";
+}
+
+setInterval(showCerts, 3000);
+
+
